@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码/行为评分”反爬"/><meta name="keywords" content="recaptcha, 反爬, 验证码, API漫步者" /><link rel="alternate" href="/atom.xml" title="API漫步者" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="http://www.1991.site/2020/12/31/使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码-行为评分”反爬/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "OhR8HqNS6dEph2ggaBF8npi8-gzGzoHsz",
+      appKey: "ohkLWE1SEJGE0robAWkxnhx8"
+    });
+  </script><script>
+  window.config = {"leancloud":{"app_id":"OhR8HqNS6dEph2ggaBF8npi8-gzGzoHsz","app_key":"ohkLWE1SEJGE0robAWkxnhx8"},"toc":true,"fancybox":true,"pjax":"","latex":true};
+</script>
+
+    <title>使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码/行为评分”反爬 - API漫步者</title>
+  <meta name="generator" content="Hexo 5.3.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">API漫步者</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/archives/">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">API漫步者</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            分类
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码/行为评分”反爬
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-12-31
+        </span><span class="post-category">
+            <a href="/categories/%E5%8F%8D%E7%88%AC/">反爬</a>
+            <a href="/categories/%E5%8F%8D%E7%88%AC/python3/">python3</a>
+            </span>
+        <span class="post-visits"
+             data-url="/2020/12/31/%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8CreCAPTCHA%E7%9A%84v2%E5%92%8Cv3%E5%AF%B9%E7%BD%91%E7%AB%99%E5%BA%94%E7%94%A8%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81%E7%A0%81-%E8%A1%8C%E4%B8%BA%E8%AF%84%E5%88%86%E2%80%9D%E5%8F%8D%E7%88%AC/"
+             data-title="使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码/行为评分”反爬">
+          阅读次数 0
+        </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E4%BA%86%E8%A7%A3%E8%B0%B7%E6%AD%8CreCAPTCHA"><span class="toc-text">0.了解谷歌reCAPTCHA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%AA%8C%E8%AF%81%E7%A0%81-CAPTCHA"><span class="toc-text">1.验证码(CAPTCHA)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Why-reCAPTCHA"><span class="toc-text">2.Why reCAPTCHA?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">3.使用前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%B3%A8%E5%86%8Crecaptcha%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-text">3.1 注册recaptcha密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%BF%9D%E5%AD%98%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-text">3.2 保存密钥对</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8E%A5%E5%85%A5reCAPTCHA"><span class="toc-text">4.接入reCAPTCHA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-recaptcha-v2"><span class="toc-text">4.1 recaptcha v2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-recaptcha-v3"><span class="toc-text">4.2 recaptcha v3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%90%8E%E5%8F%B0%E6%B5%81%E9%87%8F%E6%9F%A5%E7%9C%8B"><span class="toc-text">5.后台流量查看</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h2 id="0-了解谷歌reCAPTCHA"><a href="#0-了解谷歌reCAPTCHA" class="headerlink" title="0.了解谷歌reCAPTCHA"></a>0.了解谷歌reCAPTCHA</h2><p><code>reCAPTCHA</code>是谷歌推出的免费人机识别技术，使用图像验证码/用户行为评分来区别当前网站应用的用户是机器人还是正常人类。当前有<code>v2</code>版本和新的<code>v3</code>版本，当然，攻守永恒，破解<code>reCAPTCHA</code>的大有人在，<code>unCaptcha2</code>就是一个例子，相关：</p>
+<blockquote>
+<ul>
+<li> <a target="_blank" rel="noopener" href="https://www.google.com/recaptcha"><code>reCAPTCHA</code>官网-（需要科学上网）</a> </li>
+<li> <a target="_blank" rel="noopener" href="https://github.com/google/recaptcha"><code>reCAPTCHA</code>代码仓库-Github</a></li>
+<li> <a target="_blank" rel="noopener" href="https://recaptcha-demo.appspot.com/"><code>reCAPTCHA</code>验证流程在线demo</a></li>
+<li> <a target="_blank" rel="noopener" href="https://github.com/ecthros/uncaptcha2"><code>reCAPTCHA</code>破解库<code>unCaptcha2</code>代码仓库Github</a></li>
+</ul>
+</blockquote>
+<p>  作为谷歌强推的一款人机识别利器，<code>reCAPTCHA v2</code>使用图像/语音识别技术来区分人类和机器;<code>reCAPTCHA v3</code>则通过分析网站应用的大量用户流量进而使用其机器学习技术来识别用户行为并为其打分，分值范围<code>0.0~1.0</code>,得分越低的越表明当前用户是机器人。</p>
+ <a id="more"></a>
+
+<blockquote>
+<p>假设我们的网站应用是属于<code>登录/注册</code>后进而后续操作的类型，那么防止用户滥注册或机器人登录破坏网站应用生态尤为重要，反爬/<code>anti-robot</code>迫在眉睫.而第一关卡就是阻止机器人/恶意注册程序进入我们网站应用的数据空间，将其拒之门外或者诱敌深入（爬虫蜜罐）。谷歌<code>reCAPTCHA</code>或许可以帮助我们实现基础的第一步：拒机器人/恶意程序于门外。</p>
+</blockquote>
+<blockquote>
+<p>以下简称恶意程序或机器人为<code>攻击者</code>.</p>
+</blockquote>
+<h2 id="1-验证码-CAPTCHA"><a href="#1-验证码-CAPTCHA" class="headerlink" title="1.验证码(CAPTCHA)"></a>1.验证码(CAPTCHA)</h2><p>一分为二地看，我们的网站应用被恶意爬取或机器人造访，必是有可图之物，比如某个功能强大的<code>路由</code>（页面工具），对于攻击者的意图有针对性的进行防护是基础反爬意识；其次，基于“料敌从宽 御敌从严”的理念，我们有必要预设攻击者的<code>攻击模型</code>，即攻击者可能使用的突破反爬的技术手段，进而采取对应的反爬措施。</p>
+<p>对于我们的网站应用，有价值的工具或者页面操作需要在<code>注册/登录</code>后才能进一步访问，因而阻止攻击者高频次的注册/登录是首要矛盾。注册/登录验证码可以有效过滤掉一波攻击者。市面上的验证码一般有：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/31/gxZmWRDUs37q4Mp.gif" alt="识别颠倒文字"><br><img src="https://i.loli.net/2020/12/31/i8GdcVe3EDJRUQZ.jpg" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/Hz7dRXAJgxOhCf6.png" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/xITmp7LwRBXbNka.jpg" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/k7jvn9qfwJrSclg.gif" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/sXoKjOTaruCcy9B.gif" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/eGR18Xk7Yud6ftV.png" width="250" height="200" align="left"><br><img src="https://i.loli.net/2020/12/31/QUrTfYz5NC8OkSB.gif" width="250" height="200" align="left"><img src="https://i.loli.net/2020/12/31/ltevmJFSGxfAaWu.gif" width="250" height="200" align="center"></p>
+</blockquote>
+<p>以上种种验证码只是当前验证码市场的一小部分，针对图像验证码，可以根据机器学习技术对大量的训练集进行学习，进一步达到破解的目的，亦或是接入人工打码平台，而对于简单的字符数字识别验证码，则有对应的成熟的第三方库可以轻易破解，网站应用加入验证码的目的只是提高或者延长攻击者的破解周期和成本代价而已。</p>
+<h2 id="2-Why-reCAPTCHA"><a href="#2-Why-reCAPTCHA" class="headerlink" title="2.Why reCAPTCHA?"></a>2.Why reCAPTCHA?</h2><p>谷歌<code>reCAPTCHA</code>两个版本的数据流均是前端点击识别/用户环境生成关键参数<code>g-recaptcha-response</code>对服务端进行验证查询,类似如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;g-recaptcha-response&quot;</span>: <span class="string">&quot;03AGdBq27snbv3yi57Y7mbBf2BY8JKo-KJdzgYtt4A5td07JoOMdPcYjVHGxRl5XR-twUQxlcURIUoYW8d0roXwm4qA0r5WxNFBzIr4Wu4hyNzodl0Mvn-jgd0qvu2YGWXY5X8UfTC67-sI2hkbwdy7K3giaHesVlhJQVg4vdfxvxBY-DfRwgATj77PrhPF_3XX43FCI29n8nYVk97JAFKFSH2lIlWQDBH6xCkk9x3MKHW7eTLxUOYd_S0Hj4Tz9C3gM7OmkG0oWKIM40cn112FsQ3QsvUYMlIneOhTr8GGXnsiGOM2iyFL8p1OtwIMrad5RjThYPRwitQjyFIRtEGgDceBobowaH46cv5aG34XUjsRd8Z6hjK3z1uN4mQJLfn7cFHfI1Z6GFyTjxRGIsFDZOOJBktCb9aBHlNKqui3m3xdGbVjF1-etN_xlo6i4VbzPPc4CBsfI956xrCYfEOdMU0cLGhzzHoAg&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此值<code>唯一且无法重复使用</code>，通过用户环境生成，可以作为注册登录携带的必要参数，服务端通过<code>私钥</code>与谷歌通信查询验证此值有效性从而达到识别人机的作用。</p>
+<h2 id="3-使用前准备"><a href="#3-使用前准备" class="headerlink" title="3.使用前准备"></a>3.使用前准备</h2><h3 id="3-1-注册recaptcha密钥对"><a href="#3-1-注册recaptcha密钥对" class="headerlink" title="3.1 注册recaptcha密钥对"></a>3.1 注册recaptcha密钥对</h3><p>登录<a target="_blank" rel="noopener" href="https://www.google.com/recaptcha/admin/create">Google reCAPTCHA（需科学上网）</a>管理界面，点击创建recaptcha密钥对：<br><img src="https://i.loli.net/2021/01/01/VzW6crYxgO3HmyZ.png" alt="Snipaste_2020-12-31_21-15-18.png"></p>
+<h3 id="3-2-保存密钥对"><a href="#3-2-保存密钥对" class="headerlink" title="3.2 保存密钥对"></a>3.2 保存密钥对</h3><p><img src="https://i.loli.net/2021/01/01/m9HfET1ivraO8GN.png" alt="Snipaste_2020-12-30_19-12-35.png"></p>
+<p>第一个密钥为内嵌在网站应用上的<code>site_key</code>,第二个为服务端与Google通信用的密钥<code>secret_key</code>，不能外泄。</p>
+<h2 id="4-接入reCAPTCHA"><a href="#4-接入reCAPTCHA" class="headerlink" title="4.接入reCAPTCHA"></a>4.接入reCAPTCHA</h2><p>本文使用<code>flask</code>作为后台服务框架，demo环境：</p>
+<blockquote>
+<ul>
+<li>python3.7</li>
+<li>win10 64位</li>
+<li>requests</li>
+</ul>
+</blockquote>
+<p>文件结构：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">recaptcha-demo</span><br><span class="line">├── README.md</span><br><span class="line">├── index.py #脚本服务器入口</span><br><span class="line">├── config.py # 密钥对配置文件</span><br><span class="line">├── gunicorn.conf.py # gunicorn运行配置脚本，适用于Linux环境</span><br><span class="line">├── templates</span><br><span class="line">│   ├── recaptcha-v2-checkbox.html # v2版本复选框模式</span><br><span class="line">│   ├── recaptcha-v2-checkbox-explicit-rendering.html #v2版本多部件渲染</span><br><span class="line">│   ├── recaptcha-v2-invisible.html #v2版本隐藏模式 </span><br><span class="line">│   ├── recaptcha-v2-invisible-explicit-rendering.html #v2版本隐藏onload回调模式</span><br><span class="line">│   ├── recaptcha-v2-invisible-invoke.html #v2版本隐藏主动调用模式</span><br><span class="line">│   ├── recaptcha-v3.html #v3版本默认模式</span><br><span class="line">│   └── recaptcha-v3-programmatically.html #v3版本程序显式调用模式</span><br><span class="line">└── run.sh # Linux环境下快速启动脚本</span><br></pre></td></tr></table></figure>
+<p>密钥对配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ddict</span>(<span class="params"><span class="built_in">dict</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.get(item)</span><br><span class="line"></span><br><span class="line"><span class="comment"># recaptcha 版本对应的模式及密钥对</span></span><br><span class="line">Keys = Ddict(&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># reCAPTCHA v2版本</span></span><br><span class="line">    <span class="string">&#x27;V2&#x27;</span>:Ddict(&#123;</span><br><span class="line">        <span class="comment"># 域名标识键,去除英文点“.”,比如域名：recaptcha.1991.site 可以写为：recaptcha1991site</span></span><br><span class="line">        <span class="string">&#x27;localhost&#x27;</span>:Ddict(&#123;</span><br><span class="line">            <span class="comment"># 复选框模式checkbox</span></span><br><span class="line">            <span class="string">&#x27;checkbox&#x27;</span>:Ddict(&#123;</span><br><span class="line">                <span class="string">&#x27;site_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;secret_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="comment"># 后台隐藏模式invisible</span></span><br><span class="line">            <span class="string">&#x27;invisible&#x27;</span>:Ddict(&#123;</span><br><span class="line">                <span class="string">&#x27;site_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;secret_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="comment"># reCAPTCHA v3版本</span></span><br><span class="line">    <span class="string">&#x27;V3&#x27;</span>:Ddict(&#123;</span><br><span class="line">        <span class="comment"># 域名标识键,去除英文点“.”,比如域名：recaptcha.1991.site 可以写为：recaptcha1991site</span></span><br><span class="line">        <span class="string">&#x27;localhost&#x27;</span>:Ddict(&#123;</span><br><span class="line">            <span class="string">&#x27;site_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;secret_key&#x27;</span>:<span class="string">&#x27;xxxxx&#x27;</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="4-1-recaptcha-v2"><a href="#4-1-recaptcha-v2" class="headerlink" title="4.1 recaptcha v2"></a>4.1 recaptcha v2</h3><blockquote>
+<p>复选框checkbox 模式</p>
+</blockquote>
+<p>前端页面<code>recaptcha-v2-checkbox.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;font-size:14px;&quot;</span>&gt;</span><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>reCAPTCHA v2 测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://www.recaptcha.net/recaptcha/api.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">   <span class="function"><span class="keyword">function</span> <span class="title">onSubmit</span>(<span class="params">token</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//回调处理</span></span></span><br><span class="line">       alert(token);</span><br><span class="line">   &#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/v2/verify/checkbox&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">id</span>=<span class="string">&quot;demo-form&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;用户名，随便输入&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;version&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;V2&quot;</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;g-recaptcha&quot;</span> <span class="attr">data-sitekey</span>=<span class="string">&quot;&#123;&#123; site_key &#125;&#125;&quot;</span> <span class="attr">data-action</span>=<span class="string">&#x27;login&#x27;</span> <span class="attr">data-callback</span>=<span class="string">&quot;onSubmit&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>  &gt;</span>Login<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>后端路由及验证函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/v2/checkbox&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recaptcha_v2_checkbox</span>():</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;recaptcha-v2-checkbox.html&#x27;</span>,site_key=Keys.V2.localhost.checkbox.site_key)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># ---- 验证路由 ----</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/v2/verify/checkbox&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="meta">@verify_recaptcha(<span class="params">Keys.V2.localhost.checkbox.secret_key</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">v2_verrify_checkbox</span>():</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&#x27;data&#x27;</span>:request.form,</span><br><span class="line">        <span class="string">&#x27;verify&#x27;</span>:request.verify_response</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> jsonify(data)</span><br></pre></td></tr></table></figure>
+<p>其中装饰器<code>verify_recaptcha</code>是两个版本统一与Google recaptcha通信验证的函数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verify_recaptcha</span>(<span class="params">SECRET_KEY</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">outter</span>(<span class="params">f</span>):</span></span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">f</span>)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">            request.verify_response = &#123;&#125;</span><br><span class="line">            request.recaptcha_passed = <span class="literal">False</span></span><br><span class="line">            token = request.form.get(<span class="string">&#x27;g-recaptcha-response&#x27;</span>)</span><br><span class="line">            api = <span class="string">&#x27;https://www.recaptcha.net/recaptcha/api/siteverify&#x27;</span></span><br><span class="line">            data = &#123;</span><br><span class="line">                <span class="string">&#x27;response&#x27;</span>: token,</span><br><span class="line">                <span class="string">&#x27;secret&#x27;</span>: SECRET_KEY,</span><br><span class="line">                <span class="string">&#x27;remoteip&#x27;</span>: request.remote_addr</span><br><span class="line">            &#125;</span><br><span class="line">            response = requests.post(api, data=data)</span><br><span class="line">            result = response.json()</span><br><span class="line">            <span class="keyword">if</span> result.get(<span class="string">&#x27;success&#x27;</span>):</span><br><span class="line">                request.verify_response = result</span><br><span class="line">                request.recaptcha_passed = <span class="literal">True</span></span><br><span class="line">                <span class="keyword">return</span> f(*args,**kwargs)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> result,<span class="number">403</span></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> outter</span><br></pre></td></tr></table></figure>
+<p>验证通过后返回数据示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;g-recaptcha-response&quot;</span>: <span class="string">&quot;03AGdBq24IwuxxSrI66F_n0AQ6zrthAjVt7cGzvQ4JlfbptQVY8MybRxN_LlGbNxLyOa-9lOHp8iVquam9qBzf_BiwB_yBJcXvRIWlFjBcSUyozz7Sq-NLL53aOTsp4CeWbv_PWUKTTIQ3YRQH10xRCGoHUrU2nSdTb_x-my2HYjnXMJrHwbHXnzONWgLl4IwzoxJBv_S0s8iaqJGSj-7jPKDKw6MHBxIMAfMpJn46Uh2q_2yxax5Vox3DXt_F32WJIWrmhCmnx0xQtEZvVVSTaJxkzYJWEvuR_Nvt2JKrV2AfDFlkbc7idx90P6t8isyVsMDxEOBYZogzzGaWteaaU4FW015MVVBkxctbMkch0LP3_UZv70OC9_kpafEKNDT_1HUCT_EW48vEzWpBBDCbe4cMhJJx0-Ho_mrRWlL2LsdCJqXLGLQ-2IRFiBlTG6TWPCaaL72iDXLdpEjVo94eA87GPdx2ia32AxPnphPhWr_eSZvePD3DUbY&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;username&quot;</span>: <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;V2&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;verify&quot;</span>: </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;challenge_ts&quot;</span>: <span class="string">&quot;2021-01-01T05:33:58Z&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hostname&quot;</span>: <span class="string">&quot;recaptcha.1991.site&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;success&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>验证失败返回示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;error-codes&quot;</span>: </span><br><span class="line">  [</span><br><span class="line">    <span class="string">&quot;missing-input-response&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;success&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>其中，<code>success</code>字段为<code>true</code>则表明验证通过，为<code>false</code>则表明验证失败。</p>
+<p>对于我们想要使用<code>recaptcha v2</code>进行防护的任意路由，在其页面引入v2版本的html元素后，我们在服务端可以直接安上装饰器<code>verify_recaptcha</code>,例如对登录路由进行保护:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="meta">@verify_recaptcha(<span class="params">Keys.V2.localhost.checkbox.secret_key</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span>():</span></span><br><span class="line">  <span class="keyword">if</span> request.recaptcha_passed:</span><br><span class="line">  <span class="comment"># 进行登录操作</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">  <span class="comment">#验证不通过操作</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>在线测试demo: 点击==&gt;<a target="_blank" rel="noopener" href="http://recaptcha.1991.site:8888/v2/checkbox">recaptcha.1991.site</a></strong></p>
+<h3 id="4-2-recaptcha-v3"><a href="#4-2-recaptcha-v3" class="headerlink" title="4.2 recaptcha v3"></a>4.2 recaptcha v3</h3><blockquote>
+<p>默认自动绑定渲染模式</p>
+</blockquote>
+<p>前端页面<code>recaptcha-v3.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>reCAPTCHA v3 <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://www.recaptcha.net/recaptcha/api.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>reCAPTCHA v3 测试<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">   <span class="function"><span class="keyword">function</span> <span class="title">onSubmit</span>(<span class="params">token</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//回调处理</span></span></span><br><span class="line"><span class="javascript">       <span class="built_in">console</span>.log(token);</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo-form&quot;</span>).submit();</span></span><br><span class="line">   &#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/v3/verify&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">id</span>=<span class="string">&quot;demo-form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;用户名，随便输入&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;version&quot;</span> <span class="attr">value</span>=<span class="string">&quot;V3&quot;</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;g-recaptcha&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-sitekey</span>=<span class="string">&quot;&#123;&#123; site_key &#125;&#125;&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-callback</span>=<span class="string">&#x27;onSubmit&#x27;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-action</span>=<span class="string">&#x27;login&#x27;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>后端路由及验证函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># --- html模板路由 ---</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/v3&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recaptcha_v3</span>():</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;recaptcha-v3.html&#x27;</span>,site_key=Keys.V3.localhost.site_key)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># ---- 验证路由 ----    </span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/v3/verify&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="meta">@verify_recaptcha(<span class="params">Keys.V3.localhost.secret_key</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">v3_verrify</span>():</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&#x27;data&#x27;</span>:request.form,</span><br><span class="line">        <span class="string">&#x27;verify&#x27;</span>:request.verify_response,</span><br><span class="line">        <span class="string">&#x27;score&#x27;</span>:request.verify_response.get(<span class="string">&#x27;score&#x27;</span>) <span class="keyword">if</span> request.recaptcha_passed <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> jsonify(data)</span><br></pre></td></tr></table></figure>
+<p>验证通过后返回数据示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;data&quot;</span>: </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;g-recaptcha-response&quot;</span>: <span class="string">&quot;03AGdBq24idxSv7r61KK7TAkApl1qRkq_1B7sdqQqYuqASa9A-skQG6Oc7VFn74JkcVPQSgv3gAUmLfKe8iZQTVjadxrW5er-KnJ1lv4db9mHV1KIElLQo-mK_bpwx8CLV5WX04HhgBCXdaosWSftRK9gm6X7LowaVCAlAJy_DzSERK38Bqeepk01_z-joVGf9Rx0j_kJiBeUGyhOJXr0C5N1w2S62ESTtIqDbMjR1KxfOTM7uObOIB9dXeVyfDJzyKqz0qc2VtRlZ-JUAe2yJfwwISWUSfZeavqqSOLTkRb3xjbeOgYMDpQZIvzwuga8Jf0FOMljUCNj_EhpYO72WGANOud5RgSgHdgDJNNuEZng4X9FKdBn9whtV5cyw-0KktmSica8-CJBC6qnTtJhdgdjzVzOHj4YkyXpbe1nfEQxrylzAf_J1v3aARcXO_W8A2EPLwXbH68Jq&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;username&quot;</span>: <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;V3&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;score&quot;</span>: <span class="number">0.9</span>,</span><br><span class="line">  <span class="attr">&quot;verify&quot;</span>: </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;action&quot;</span>: <span class="string">&quot;login&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;challenge_ts&quot;</span>: <span class="string">&quot;2021-01-01T06:28:26Z&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hostname&quot;</span>: <span class="string">&quot;recaptcha.1991.site&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;score&quot;</span>: <span class="number">0.9</span>,</span><br><span class="line">    <span class="attr">&quot;success&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>v3版本的体验比v2版本的更加顺畅，因为其依赖的是评分机制，越接近<code>0.0</code>分则越表明当前用户是机器人从而可以给服务端进行对应处理。但是前提是当前网站的流量必须积累一段时间评分才会愈加精确，有更多的用户流量行为数据进行训练才会更加完善。<strong>如果担心用户隐私的问题，建议慎重选择</strong></p>
+<p><strong>在线测试demo: 点击==&gt;<a target="_blank" rel="noopener" href="http://recaptcha.1991.site:8888/v3">recaptcha.1991.site</a></strong></p>
+<p><code>v2\v3</code>其他模式的完整代码示例可见<code>GitHub</code>仓库:<a target="_blank" rel="noopener" href="https://github.com/01ly/recaptcha-flask-demo">recaptcha-flask-demo</a></p>
+<h2 id="5-后台流量查看"><a href="#5-后台流量查看" class="headerlink" title="5.后台流量查看"></a>5.后台流量查看</h2><p>登录<code>Google reCAPTCHA admin</code><a target="_blank" rel="noopener" href="https://www.google.com/recaptcha/admin">后台面板</a>可查看最近网站应用<code>recaptcha</code>的流量情况:<br><img src="https://i.loli.net/2021/01/01/IRUtEDMThqa5KQY.png" alt="Snipaste_2020-12-31_21-15-50.png"></p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://www.1991.site">linkin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://www.1991.site/2020/12/31/%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8CreCAPTCHA%E7%9A%84v2%E5%92%8Cv3%E5%AF%B9%E7%BD%91%E7%AB%99%E5%BA%94%E7%94%A8%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81%E7%A0%81-%E8%A1%8C%E4%B8%BA%E8%AF%84%E5%88%86%E2%80%9D%E5%8F%8D%E7%88%AC/">http://www.1991.site/2020/12/31/%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8CreCAPTCHA%E7%9A%84v2%E5%92%8Cv3%E5%AF%B9%E7%BD%91%E7%AB%99%E5%BA%94%E7%94%A8%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81%E7%A0%81-%E8%A1%8C%E4%B8%BA%E8%AF%84%E5%88%86%E2%80%9D%E5%8F%8D%E7%88%AC/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/recaptcha/">recaptcha</a>
+            <a href="/tags/%E5%8F%8D%E7%88%AC/">反爬</a>
+            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/">验证码</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2020/11/23/%E5%BE%97%E7%89%A9PC%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3%E8%A7%A3%E6%9E%90/">
+        <span class="next-text nav-default">得物PC微信小程序接口解析</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="gitalk-container"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:crawler@88.com" class="iconfont icon-email" title="email"></a>
+        </div><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">
+  <span id="busuanzi_container_site_uv">
+    uv:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  <span id="busuanzi_container_site_pv">
+    pv:<span id="busuanzi_value_site_pv"></span>
+</span>
+
+  <span class="copyright-year">&copy;2020 - 2021<span class="heart">
+      <i class="iconfont icon-cup">|</i>
+    </span>
+    <span class="author"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">浙ICP备18022544号-3</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"/>
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'e27dcb1bc0afcd647c41',
+    clientSecret: '9972a7d4945d2d2ff7a941e0b75891f567c474f8',
+    repo: 'Ih4cker.github.io',
+    owner: 'Ih4cker',
+    admin: ['Ih4cker'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
