@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>API漫步者</title>
+  <icon>http://www.1991.site/taici.ico</icon>
+  
+  <link href="http://www.1991.site/atom.xml" rel="self"/>
+  
+  <link href="http://www.1991.site/"/>
+  <updated>2021-01-01T06:44:07.656Z</updated>
+  <id>http://www.1991.site/</id>
+  
+  <author>
+    <name>linkin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用谷歌reCAPTCHA的v2和v3对网站应用进行“图像验证码/行为评分”反爬</title>
+    <link href="http://www.1991.site/2020/12/31/%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8CreCAPTCHA%E7%9A%84v2%E5%92%8Cv3%E5%AF%B9%E7%BD%91%E7%AB%99%E5%BA%94%E7%94%A8%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81%E7%A0%81-%E8%A1%8C%E4%B8%BA%E8%AF%84%E5%88%86%E2%80%9D%E5%8F%8D%E7%88%AC/"/>
+    <id>http://www.1991.site/2020/12/31/%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8CreCAPTCHA%E7%9A%84v2%E5%92%8Cv3%E5%AF%B9%E7%BD%91%E7%AB%99%E5%BA%94%E7%94%A8%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81%E7%A0%81-%E8%A1%8C%E4%B8%BA%E8%AF%84%E5%88%86%E2%80%9D%E5%8F%8D%E7%88%AC/</id>
+    <published>2020-12-31T13:21:00.000Z</published>
+    <updated>2021-01-01T06:44:07.656Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;0-了解谷歌reCAPTCHA&quot;&gt;&lt;a href=&quot;#0-了解谷歌reCAPTCHA&quot; class=&quot;headerlink&quot; title=&quot;0.了解谷歌reCAPTCHA&quot;&gt;&lt;/a&gt;0.了解谷歌reCAPTCHA&lt;/h2&gt;&lt;p&gt;&lt;code&gt;reCAPTCHA&lt;/code&gt;是谷歌推出的免费人机识别技术，使用图像验证码/用户行为评分来区别当前网站应用的用户是机器人还是正常人类。当前有&lt;code&gt;v2&lt;/code&gt;版本和新的&lt;code&gt;v3&lt;/code&gt;版本，当然，攻守永恒，破解&lt;code&gt;reCAPTCHA&lt;/code&gt;的大有人在，&lt;code&gt;unCaptcha2&lt;/code&gt;就是一个例子，相关：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt; &lt;a href=&quot;https://www.google.com/recaptcha&quot;&gt;&lt;code&gt;reCAPTCHA&lt;/code&gt;官网-（需要科学上网）&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt; &lt;a href=&quot;https://github.com/google/recaptcha&quot;&gt;&lt;code&gt;reCAPTCHA&lt;/code&gt;代码仓库-Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; &lt;a href=&quot;https://recaptcha-demo.appspot.com/&quot;&gt;&lt;code&gt;reCAPTCHA&lt;/code&gt;验证流程在线demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; &lt;a href=&quot;https://github.com/ecthros/uncaptcha2&quot;&gt;&lt;code&gt;reCAPTCHA&lt;/code&gt;破解库&lt;code&gt;unCaptcha2&lt;/code&gt;代码仓库Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  作为谷歌强推的一款人机识别利器，&lt;code&gt;reCAPTCHA v2&lt;/code&gt;使用图像/语音识别技术来区分人类和机器;&lt;code&gt;reCAPTCHA v3&lt;/code&gt;则通过分析网站应用的大量用户流量进而使用其机器学习技术来识别用户行为并为其打分，分值范围&lt;code&gt;0.0~1.0&lt;/code&gt;,得分越低的越表明当前用户是机器人。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="反爬" scheme="http://www.1991.site/categories/%E5%8F%8D%E7%88%AC/"/>
+    
+    <category term="python3" scheme="http://www.1991.site/categories/%E5%8F%8D%E7%88%AC/python3/"/>
+    
+    
+    <category term="recaptcha" scheme="http://www.1991.site/tags/recaptcha/"/>
+    
+    <category term="反爬" scheme="http://www.1991.site/tags/%E5%8F%8D%E7%88%AC/"/>
+    
+    <category term="验证码" scheme="http://www.1991.site/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>得物PC微信小程序接口解析</title>
+    <link href="http://www.1991.site/2020/11/23/%E5%BE%97%E7%89%A9PC%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3%E8%A7%A3%E6%9E%90/"/>
+    <id>http://www.1991.site/2020/11/23/%E5%BE%97%E7%89%A9PC%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3%E8%A7%A3%E6%9E%90/</id>
+    <published>2020-11-23T04:27:00.000Z</published>
+    <updated>2020-11-23T05:45:01.923Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;抓包&quot;&gt;&lt;a href=&quot;#抓包&quot; class=&quot;headerlink&quot; title=&quot;抓包&quot;&gt;&lt;/a&gt;抓包&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Fiddler &lt;/li&gt;
+&lt;li&gt;windows 10 64bit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;页面对应接口&quot;&gt;&lt;a href=&quot;#页面对应接口&quot; class=&quot;headerlink&quot; title=&quot;页面对应接口&quot;&gt;&lt;/a&gt;页面对应接口&lt;/h2&gt;&lt;h3 id=&quot;1-商品详情&quot;&gt;&lt;a href=&quot;#1-商品详情&quot; class=&quot;headerlink&quot; title=&quot;1.商品详情&quot;&gt;&lt;/a&gt;1.商品详情&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="python3" scheme="http://www.1991.site/categories/python3/"/>
+    
+    <category term="接口分析" scheme="http://www.1991.site/categories/python3/%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90/"/>
+    
+    <category term="加密源码" scheme="http://www.1991.site/categories/python3/%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90/%E5%8A%A0%E5%AF%86%E6%BA%90%E7%A0%81/"/>
+    
+    
+    <category term="抓包" scheme="http://www.1991.site/tags/%E6%8A%93%E5%8C%85/"/>
+    
+    <category term="爬虫" scheme="http://www.1991.site/tags/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="接口" scheme="http://www.1991.site/tags/%E6%8E%A5%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反编译PC微信小程序</title>
+    <link href="http://www.1991.site/2020/11/20/%E5%8F%8D%E7%BC%96%E8%AF%91PC%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://www.1991.site/2020/11/20/%E5%8F%8D%E7%BC%96%E8%AF%91PC%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
+    <published>2020-11-20T08:50:06.000Z</published>
+    <updated>2020-11-20T13:14:04.914Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;微信是移动社交的巨无霸，任何移动端版本的wechat，想要逆向都是很困难的。但是企鹅意欲打造的社交生态圈覆盖PC和移动端，移动端无法&lt;br&gt;解决的事情，可以从其他的途径找到某些眉目。小程序是新的一个突破口，微信小程序已经成为很多移动端app的流量引入平台，那么被数据采集也无可避免。&lt;/p&gt;
+&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;示例微信小程序：今日最热榜&lt;/li&gt;
+&lt;li&gt;平台：Windows 10 64bit&lt;/li&gt;
+&lt;li&gt;Python 3.7  64bit&lt;/li&gt;
+&lt;li&gt;NodeJs  v12.16.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/leakC/wxappUnpacker-1&quot;&gt;微信小程序包反编译工具&lt;code&gt;wxappUnpacker&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/leakC/pc_wxapkg_decrypt_python&quot;&gt;微信pc小程序解密脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.telerik.com/fiddler&quot;&gt;抓包工具Fiddler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="反编译" scheme="http://www.1991.site/categories/%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
+    
+    
+    <category term="微信小程序" scheme="http://www.1991.site/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Python爬虫种类、法律、轮子的一二三</title>
+    <link href="http://www.1991.site/2020/11/16/%E5%85%B3%E4%BA%8EPython%E7%88%AC%E8%99%AB%E7%A7%8D%E7%B1%BB%E3%80%81%E6%B3%95%E5%BE%8B%E3%80%81%E8%BD%AE%E5%AD%90%E7%9A%84%E4%B8%80%E4%BA%8C%E4%B8%89/"/>
+    <id>http://www.1991.site/2020/11/16/%E5%85%B3%E4%BA%8EPython%E7%88%AC%E8%99%AB%E7%A7%8D%E7%B1%BB%E3%80%81%E6%B3%95%E5%BE%8B%E3%80%81%E8%BD%AE%E5%AD%90%E7%9A%84%E4%B8%80%E4%BA%8C%E4%B8%89/</id>
+    <published>2020-11-16T05:57:12.000Z</published>
+    <updated>2020-11-16T09:05:22.303Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Welcome-to-the-D-age&quot;&gt;&lt;a href=&quot;#Welcome-to-the-D-age&quot; class=&quot;headerlink&quot; title=&quot;Welcome to the D-age&quot;&gt;&lt;/a&gt;Welcome to the D-age&lt;/h2&gt;&lt;p&gt;对于网络上的公开数据，理论上只要由服务端发送到前端都可以由爬虫获取到。但是Data-age时代的到来，数据是新的黄金，毫不夸张的说，数据是未来的一切。基于统计学数学模型的各种人工智能的出现，离不开数据驱动。数据采集、清洗是最末端的技术成本，网络爬虫也是基础采集脚本。但是有几个值得关注的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于实时变化的网络环境，爬虫的持续有效性如何保证&lt;/li&gt;
+&lt;li&gt;数据采集、清洗规则的适用范围&lt;/li&gt;
+&lt;li&gt;数据采集的时间与质量–效率&lt;/li&gt;
+&lt;li&gt;爬与反爬的恩怨&lt;/li&gt;
+&lt;li&gt;爬虫的法律界限&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="爬虫" scheme="http://www.1991.site/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="python3" scheme="http://www.1991.site/categories/%E7%88%AC%E8%99%AB/python3/"/>
+    
+    
+    <category term="python爬虫" scheme="http://www.1991.site/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+</feed>
