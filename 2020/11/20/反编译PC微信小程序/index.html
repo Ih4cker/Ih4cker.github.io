@@ -165,7 +165,19 @@ MathJax = {
           
       </div>
       <div class="markdown-body">
-        <h2 id="0-解密小程序wxapkg包"><a href="#0-解密小程序wxapkg包" class="headerlink" title="0.解密小程序wxapkg包"></a>0.解密小程序wxapkg包</h2><p>pc端的微信小程序与移动端不同，pc端对小程序包(例如<code>__APP__.wxapkg</code>)进行了加密,加密详细请见<a target="_blank" rel="noopener" href="https://blog.csdn.net/yeyiqun/article/details/109172556">此处</a>，所以我们使用微信小程序反编译工具来反编译<code>wxapkg</code>包会报错，<br>一般存放某个pc微信小程序包的路径为：</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>微信是移动社交的巨无霸，任何移动端版本的wechat，想要逆向都是很困难的。但是企鹅意欲打造的社交生态圈覆盖PC和移动端，移动端无法<br>解决的事情，可以从其他的途径找到某些眉目。小程序是新的一个突破口，微信小程序已经成为很多移动端app的流量引入平台，那么被数据采集也无可避免。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>示例微信小程序：今日最热榜</li>
+<li>平台：Windows 10 64bit</li>
+<li>Python 3.7  64bit</li>
+<li>NodeJs  v12.16.1</li>
+</ul>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/leakC/wxappUnpacker-1">微信小程序包反编译工具<code>wxappUnpacker</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/leakC/pc_wxapkg_decrypt_python">微信pc小程序解密脚本</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.telerik.com/fiddler">抓包工具Fiddler</a></li>
+</ul>
+<h2 id="0-解密小程序wxapkg包"><a href="#0-解密小程序wxapkg包" class="headerlink" title="0.解密小程序wxapkg包"></a>0.解密小程序wxapkg包</h2><p>pc端的微信小程序与移动端不同，pc端对小程序包(例如<code>__APP__.wxapkg</code>)进行了加密,加密详细请见<a target="_blank" rel="noopener" href="https://blog.csdn.net/yeyiqun/article/details/109172556">此处</a>，所以我们使用微信小程序反编译工具来反编译<code>wxapkg</code>包会报错，<br>一般存放某个pc微信小程序包的路径为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&lt;用户名&gt;\Documents\WeChat Files\Applet\&lt;小程序的wxid&gt;\&lt;数字&gt;\&lt;小程序包名.wxapkg&gt;</span><br></pre></td></tr></table></figure>
 <p>类似下图：<br><img src="https://i.loli.net/2020/11/20/Bqla9X83kizMfbc.png" alt="0.png"><br><img src="https://i.loli.net/2020/11/20/kx6Z8mOo42JYdeU.png" alt="1.png"></p>
 <p>其中的<code>wx5bfb6b535af31da3</code>便是微信小程序<code>今日最热榜</code>的<code>wxid</code>,此字符串用于对小程序包的解密，需要用到。</p>

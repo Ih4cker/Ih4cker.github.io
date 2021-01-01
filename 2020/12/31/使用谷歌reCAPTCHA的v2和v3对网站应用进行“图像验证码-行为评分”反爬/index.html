@@ -183,7 +183,17 @@ MathJax = {
           
       </div>
       <div class="markdown-body">
-        <blockquote>
+        <h2 id="0-了解谷歌reCAPTCHA"><a href="#0-了解谷歌reCAPTCHA" class="headerlink" title="0.了解谷歌reCAPTCHA"></a>0.了解谷歌reCAPTCHA</h2><p><code>reCAPTCHA</code>是谷歌推出的免费人机识别技术，使用图像验证码/用户行为评分来区别当前网站应用的用户是机器人还是正常人类。当前有<code>v2</code>版本和新的<code>v3</code>版本，当然，攻守永恒，破解<code>reCAPTCHA</code>的大有人在，<code>unCaptcha2</code>就是一个例子，相关：</p>
+<blockquote>
+<ul>
+<li> <a target="_blank" rel="noopener" href="https://www.google.com/recaptcha"><code>reCAPTCHA</code>官网-（需要科学上网）</a> </li>
+<li> <a target="_blank" rel="noopener" href="https://github.com/google/recaptcha"><code>reCAPTCHA</code>代码仓库-Github</a></li>
+<li> <a target="_blank" rel="noopener" href="https://recaptcha-demo.appspot.com/"><code>reCAPTCHA</code>验证流程在线demo</a></li>
+<li> <a target="_blank" rel="noopener" href="https://github.com/ecthros/uncaptcha2"><code>reCAPTCHA</code>破解库<code>unCaptcha2</code>代码仓库Github</a></li>
+</ul>
+</blockquote>
+<p>  作为谷歌强推的一款人机识别利器，<code>reCAPTCHA v2</code>使用图像/语音识别技术来区分人类和机器;<code>reCAPTCHA v3</code>则通过分析网站应用的大量用户流量进而使用其机器学习技术来识别用户行为并为其打分，分值范围<code>0.0~1.0</code>,得分越低的越表明当前用户是机器人。</p>
+<blockquote>
 <p>假设我们的网站应用是属于<code>登录/注册</code>后进而后续操作的类型，那么防止用户滥注册或机器人登录破坏网站应用生态尤为重要，反爬/<code>anti-robot</code>迫在眉睫.而第一关卡就是阻止机器人/恶意注册程序进入我们网站应用的数据空间，将其拒之门外或者诱敌深入（爬虫蜜罐）。谷歌<code>reCAPTCHA</code>或许可以帮助我们实现基础的第一步：拒机器人/恶意程序于门外。</p>
 </blockquote>
 <blockquote>
@@ -243,6 +253,7 @@ MathJax = {
 <p><strong>在线测试demo: 点击==&gt;<a target="_blank" rel="noopener" href="http://recaptcha.1991.site:8888/v3">recaptcha.1991.site</a></strong></p>
 <p><code>v2\v3</code>其他模式的完整代码示例可见<code>GitHub</code>仓库:<a target="_blank" rel="noopener" href="https://github.com/01ly/recaptcha-flask-demo">recaptcha-flask-demo</a></p>
 <h2 id="5-后台流量查看"><a href="#5-后台流量查看" class="headerlink" title="5.后台流量查看"></a>5.后台流量查看</h2><p>登录<code>Google reCAPTCHA admin</code><a target="_blank" rel="noopener" href="https://www.google.com/recaptcha/admin">后台面板</a>可查看最近网站应用<code>recaptcha</code>的流量情况:<br><img src="https://i.loli.net/2021/01/01/IRUtEDMThqa5KQY.png" alt="Snipaste_2020-12-31_21-15-50.png"></p>
+
       </div>
       
         <div class="prev-or-next">
